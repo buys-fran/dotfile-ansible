@@ -15,16 +15,17 @@
  * Install ansible `sudo apt-get install -y ansible`.
  * Ansible needs a Python interpreter `sudo apt-get install python -y`
 
- Not sure about these
- * Move hosts file for reference `sudo mv /etc/ansible/hosts /etc/ansible/hosts.orig`
- * Make a new hosts file `sudo touch /etc/ansible/hosts`
- * [MANUAL STEP]
-  - Add the following to hosts:
-  ```
-  [local]
-  127.0.0.1
-  ```
-
 ### Ansible playboo
- * Add playbook.yml `touch playbook.yml`
+ * Clone dotfiles.
  * Run ansiable playbook `ansible-playbook --connection=local --inventory 127.0.0.1, playbook.yml`
+
+### AWS Ports
+ * Add custom UDP incoming ports 60000 - 61000 for mosh
+ * Ensure security group is assigned to VPS
+
+
+## Notes from for client machine
+
+### SSH/MOSH
+ * Mosh must be installed on client.
+ * Connecting: `mosh --ssh="ssh -i 'ubuntu-salad.pem'" ubuntu@aws-domain-name.com
